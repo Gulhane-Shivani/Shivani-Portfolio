@@ -46,6 +46,11 @@ export default function Home() {
           className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition"
         >
           Contact Me
+        </a><a
+          href="mailto:shivanistudent@example.com"
+          className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition"
+        >
+          projects
         </a>
       </div>
     </section>
