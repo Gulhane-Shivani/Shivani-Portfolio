@@ -1,5 +1,35 @@
 @import "tailwindcss";
 /* Custom global styles */
-body {
-  @apply bg-gray-50 text-gray-800 font-sans;
+
+/* Gradient Background Animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-gradient-animate {
+  background: linear-gradient(135deg, #ffe5ec, #f3e8ff, #e0f2fe);
+  background-size: 200% 200%;
+  animation: gradientFlow 10s ease infinite;
+}
+
+/* Floating Image Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
 }
