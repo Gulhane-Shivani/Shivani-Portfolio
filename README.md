@@ -1,4 +1,4 @@
-Portfolio Website — React + Spring Boot
+Portfolio Website — React 
 
 This project is my personal portfolio website, built to showcase my background, skills, and projects as a student and aspiring professional in software development. The application demonstrates a full-stack architecture using React for the frontend and Spring Boot for the backend, reflecting my ability to design and develop complete web applications.
 
