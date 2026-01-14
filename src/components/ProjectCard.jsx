@@ -16,7 +16,7 @@ export default function ProjectCard({ title, image, description, link, technolog
         </div>
 
         <a
-          href={link || "#"}
+          href={link || ""}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block text-center w-full py-2 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors"

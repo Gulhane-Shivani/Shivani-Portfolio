@@ -6,7 +6,7 @@ export const projects = [
       "An e-commerce platform for electronic products with separate user and admin modules. Includes product management, order tracking, and secure transactions.",
     technologies: ["HTML", "CSS", "C#", "ASP.NET", "MS-Access"],
     link: "#",
-    image: "/assets/Portfolio.png"
+    image: "/assets/Gadget-zone.png"
   },
   {
     id: 2,
@@ -14,8 +14,8 @@ export const projects = [
     description:
       "A face recognition-based system to identify and manage criminal records using static images and live webcam capture.",
     technologies: ["Python", "OpenCV", "Flask", "MongoDB"],
-    link: "#",
-    image: "/assets/Portfolio.png" // Using placeholder for now as per user request context
+    link: "https://github.com/Gulhane-Shivani/criminal-record-system.git",
+    image: "assets/criminal-project.png" // Using placeholder for now as per user request context
   },
   {
     id: 3,
