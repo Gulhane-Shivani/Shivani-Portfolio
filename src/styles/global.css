@@ -1,0 +1,45 @@
+@import "tailwindcss";
+/* Custom global styles */
+
+/* Gradient Background Animation */
+/* Cursor blinking effect */
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.animate-cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Background gradient animation */
+.bg-gradient-animate {
+  background: linear-gradient(135deg, #f8eaff, #e0f2fe, #fdeaf1);
+  background-size: 300% 300%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
