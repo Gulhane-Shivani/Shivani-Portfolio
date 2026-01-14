@@ -5,7 +5,7 @@ export default function Contact() {
         <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
         <p className="text-gray-600 mb-8">Interested in collaborating or hiring me?</p>
         <a
-          href="mailto:shivanistudent@example.com"
+          href="mailto:shivanigulhane2002@gmail.com"
           className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
         >
           Send Email
