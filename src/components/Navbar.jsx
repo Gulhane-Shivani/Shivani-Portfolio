@@ -23,15 +23,15 @@ export default function Navbar({ darkMode }) {
       ? "bg-gray-950/80 border-gray-800 text-white"
       : "bg-white/80 border-gray-200 text-gray-900"
       }`}>
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         {/* Brand */}
-        <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent hover:scale-105 transition-transform">
+        <Link to="/" className="text-xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent hover:scale-105 transition-transform">
           Shivani Portfolio
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          <ul className="flex gap-8 font-medium">
+        <div className="hidden md:flex items-center gap-6">
+          <ul className="flex gap-6 font-medium text-base">
             {navLinks.map((link) => (
               <li key={link.path}>
                 {link.isExternal ? (

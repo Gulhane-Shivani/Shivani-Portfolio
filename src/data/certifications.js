@@ -21,7 +21,7 @@ export const certifications = [
         title: "The Frontend Web Development",
         issuer: "Great Learning",
         date: "2023",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=60",
+        image: "",
         description: "Comprehensive frontend development course covering HTML, CSS, and JavaScript."
     },
     {

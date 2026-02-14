@@ -10,25 +10,25 @@ export default function Contact({ darkMode }) {
   return (
     <section
       id="contact"
-      className={`relative py-20 min-h-screen flex items-center justify-center transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-gray-100'}`}
+      className={`relative py-14 min-h-screen flex items-center justify-center transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-gray-100'}`}
     >
       {/* Background Dots */}
       <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none"></div>
 
-      <div className="container mx-auto px-6 relative z-10 w-full max-w-6xl">
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 rounded-3xl overflow-hidden shadow-2xl ${darkMode ? 'bg-gray-900 border border-gray-800' : 'bg-white'}`}>
+      <div className="container mx-auto px-6 relative z-10 w-full max-w-5xl">
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 rounded-3xl overflow-hidden shadow-2xl ${darkMode ? 'bg-gray-900 border border-gray-800' : 'bg-white'}`}>
 
           {/* Left Panel: Contact Info */}
-          <div className={`p-10 lg:p-14 flex flex-col justify-between ${darkMode ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
+          <div className={`p-8 lg:p-12 flex flex-col justify-between ${darkMode ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
             <div>
-              <h2 className={`text-4xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+              <h2 className={`text-3xl font-bold mb-5 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                 Let's <span className="text-blue-500">Connect</span>
               </h2>
-              <p className={`mb-12 text-lg leading-relaxed ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+              <p className={`mb-10 text-base leading-relaxed ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                 I'm currently available for freelance work or full-time opportunities. If you have a project that needs some creative touch, I'd love to hear about it!
               </p>
 
-              <div className="space-y-8">
+              <div className="space-y-6">
                 <ContactItem
                   icon={<Mail />}
                   label="Email"
@@ -85,8 +85,8 @@ export default function Contact({ darkMode }) {
           </div>
 
           {/* Right Panel: Form */}
-          <div className="p-10 lg:p-14">
-            <h2 className={`text-3xl font-bold mb-8 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Send Message</h2>
+          <div className="p-8 lg:p-12">
+            <h2 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Send Message</h2>
 
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

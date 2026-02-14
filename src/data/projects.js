@@ -24,7 +24,7 @@ export const projects = [
       "A full-stack portal for managing training and placement activities with separate admin and student modules.",
     technologies: ["Java", "PostgreSQL", "Spring Boot", "React", "Tailwind CSS"],
     link: "#",
-    image: "/assets/Portfolio.png"
+    image: "/assets/project/erp.jpeg"
   },
   {
     id: 5,
