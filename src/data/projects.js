@@ -18,15 +18,6 @@ export const projects = [
     image: "assets/criminal-project.png" // Using placeholder for now as per user request context
   },
   {
-    id: 3,
-    title: "Collaborative Whiteboard",
-    description:
-      "A real-time multi-user drawing board enabling multiple users to collaborate simultaneously using WebSockets.",
-    technologies: ["React", "Spring Boot", "WebSockets"],
-    link: "#",
-    image: "/assets/Portfolio.png"
-  },
-  {
     id: 4,
     title: "Placement Management System",
     description:

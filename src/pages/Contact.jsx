@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle, Github, Linkedin } from "lucide-react";
 
 export default function Contact({ darkMode }) {
   // Dark mode specific colors for inputs
@@ -56,6 +56,30 @@ export default function Contact({ darkMode }) {
               <h4 className={`text-sm font-semibold mb-4 uppercase tracking-wider ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>Socials</h4>
               <div className="flex gap-4">
                 {/* Add social links here if needed */}
+                <a
+                  href="https://github.com/Gulhane-Shivani"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-2 rounded-xl transition-all duration-300 hover:scale-110 ${darkMode
+                    ? "bg-gray-900 text-gray-400 hover:text-white border border-gray-800 hover:border-gray-700"
+                    : "bg-gray-50 text-gray-600 hover:text-gray-900 border border-gray-200 hover:border-gray-300"
+                    }`}
+                  title="GitHub Profile"
+                >
+                  <Github size={20} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/shivani-gulhane-5b2519288/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-2 rounded-xl transition-all duration-300 hover:scale-110 ${darkMode
+                    ? "bg-gray-900 text-gray-400 hover:text-white border border-gray-800 hover:border-gray-700"
+                    : "bg-gray-50 text-gray-600 hover:text-gray-900 border border-gray-200 hover:border-gray-300"
+                    }`}
+                  title="LinkedIn Profile"
+                >
+                  <Linkedin size={20} />
+                </a>
               </div>
             </div>
           </div>

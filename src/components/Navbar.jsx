@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Github, Menu, X } from "lucide-react";
+import { Github, Menu, X, Linkedin } from "lucide-react";
 import { useState } from "react";
 
 export default function Navbar({ darkMode }) {
@@ -61,6 +61,18 @@ export default function Navbar({ darkMode }) {
           >
             <Github size={20} />
           </a>
+          <a
+            href="https://www.linkedin.com/in/shivani-gulhane-5b2519288/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`p-2 rounded-xl transition-all duration-300 hover:scale-110 ${darkMode
+              ? "bg-gray-900 text-gray-400 hover:text-white border border-gray-800 hover:border-gray-700"
+              : "bg-gray-50 text-gray-600 hover:text-gray-900 border border-gray-200 hover:border-gray-300"
+              }`}
+            title="LinkedIn Profile"
+          >
+            <Linkedin size={20} />
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -100,6 +112,16 @@ export default function Navbar({ darkMode }) {
             >
               <Github size={20} />
               <span>GitHub Profile</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/shivani-gulhane-4a001a243/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center gap-3 py-2 transition-colors ${darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900"
+                }`}
+            >
+              <Linkedin size={20} />
+              <span>LinkedIn Profile</span>
             </a>
           </li>
         </ul>
