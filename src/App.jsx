@@ -1,5 +1,6 @@
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import FloatingDock from "./components/FloatingDock";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -8,19 +9,32 @@ import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 
 export default function App() {
+  const [darkMode, setDarkMode] = useState(true); // Default to dark mode as per reference
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+  const toggleTheme = () => setDarkMode(!darkMode);
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-grow">
+    <div className={`flex flex-col min-h-screen transition-colors duration-300 ${darkMode ? 'dark bg-gray-950 text-white' : 'bg-white text-gray-900'}`}>
+      <main className="flex-grow pb-24"> {/* Added padding bottom for floating dock */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/certifications" element={<Certifications />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<Home darkMode={darkMode} />} />
+          <Route path="/about" element={<About darkMode={darkMode} />} />
+          <Route path="/projects" element={<Projects darkMode={darkMode} />} />
+          <Route path="/certifications" element={<Certifications darkMode={darkMode} />} />
+          <Route path="/skills" element={<Skills darkMode={darkMode} />} />
+          <Route path="/contact" element={<Contact darkMode={darkMode} />} />
         </Routes>
       </main>
+
+      <FloatingDock darkMode={darkMode} toggleTheme={toggleTheme} />
     </div>
   );
 }

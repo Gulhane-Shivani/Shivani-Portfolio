@@ -5,7 +5,7 @@ export const certifications = [
         issuer: "Swayam NPTEL",
         score: "77%",
         date: "2023",
-        image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=60", // Placeholder if I can't generate enough
+        image: "assets/certificates/Nptel-shivani.jpg", // Placeholder if I can't generate enough
         description: "Successfully completed the course on Programming in Java with an elite score of 77%."
     },
     {
@@ -29,7 +29,7 @@ export const certifications = [
         title: "Face Detection With OpenCv",
         issuer: "Great Learning",
         date: "2023",
-        image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?w=800&auto=format&fit=crop&q=60",
+        image: "assets/certificates/face-detection-certificate.jpg",
         description: "Hands-on project and certification in computer vision using OpenCV for face detection."
     }
 ];
