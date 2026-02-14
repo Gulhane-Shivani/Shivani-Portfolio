@@ -8,6 +8,7 @@ import Projects from "./pages/Projects";
 import Certifications from "./pages/Certifications";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
+import Resume from "./pages/Resume";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true); // Default to dark mode as per reference
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/certifications" element={<Certifications darkMode={darkMode} />} />
           <Route path="/skills" element={<Skills darkMode={darkMode} />} />
           <Route path="/contact" element={<Contact darkMode={darkMode} />} />
+          <Route path="/resume" element={<Resume darkMode={darkMode} />} />
         </Routes>
       </main>
 

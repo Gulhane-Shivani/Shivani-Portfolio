@@ -13,6 +13,7 @@ export default function Navbar({ darkMode }) {
     { name: "Certifications", path: "/certifications" },
     { name: "Skills", path: "/skills" },
     { name: "Contact", path: "/contact" },
+    { name: "Resume", path: "/resume" },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -33,16 +34,28 @@ export default function Navbar({ darkMode }) {
           <ul className="flex gap-8 font-medium">
             {navLinks.map((link) => (
               <li key={link.path}>
-                <Link
-                  to={link.path}
-                  className={`relative py-1 transition-colors hover:text-purple-500 ${isActive(link.path) ? "text-purple-500" : (darkMode ? "text-gray-400" : "text-gray-600")
-                    }`}
-                >
-                  {link.name}
-                  {isActive(link.path) && (
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-purple-500 rounded-full"></span>
-                  )}
-                </Link>
+                {link.isExternal ? (
+                  <a
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`py-1 transition-colors hover:text-purple-500 ${darkMode ? "text-gray-400" : "text-gray-600"
+                      }`}
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    to={link.path}
+                    className={`relative py-1 transition-colors hover:text-purple-500 ${isActive(link.path) ? "text-purple-500" : (darkMode ? "text-gray-400" : "text-gray-600")
+                      }`}
+                  >
+                    {link.name}
+                    {isActive(link.path) && (
+                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-purple-500 rounded-full"></span>
+                    )}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -92,14 +105,27 @@ export default function Navbar({ darkMode }) {
         <ul className="flex flex-col p-6 gap-4 font-medium">
           {navLinks.map((link) => (
             <li key={link.path}>
-              <Link
-                to={link.path}
-                className={`block py-2 transition-colors ${isActive(link.path) ? "text-purple-500" : (darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900")
-                  }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
+              {link.isExternal ? (
+                <a
+                  href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block py-2 transition-colors ${darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900"
+                    }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  to={link.path}
+                  className={`block py-2 transition-colors ${isActive(link.path) ? "text-purple-500" : (darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900")
+                    }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )}
             </li>
           ))}
           <li className={`pt-4 border-t ${darkMode ? "border-gray-800" : "border-gray-100"}`}>
@@ -114,7 +140,7 @@ export default function Navbar({ darkMode }) {
               <span>GitHub Profile</span>
             </a>
             <a
-              href="https://www.linkedin.com/in/shivani-gulhane-4a001a243/"
+              href="https://www.linkedin.com/in/shivani-gulhane-5b2519288/"
               target="_blank"
               rel="noopener noreferrer"
               className={`flex items-center gap-3 py-2 transition-colors ${darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900"

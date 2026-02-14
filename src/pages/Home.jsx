@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Eye, Download } from "lucide-react";
 import "../styles/global.css"; // Make sure this is included
 
 export default function Home({ darkMode }) {
@@ -101,6 +103,17 @@ export default function Home({ darkMode }) {
               </span>
             ))}
           </div>
+        </div>
+
+        {/* Resume Buttons */}
+        <div className="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
+          <Link
+            to="/resume"
+            className="flex items-center gap-2 px-6 py-3 font-bold rounded-xl bg-purple-600 text-white hover:bg-purple-700 transition-all transform hover:scale-105 shadow-lg shadow-purple-500/20"
+          >
+            <Eye size={20} />
+            View Resume
+          </Link>
         </div>
 
       </div>
