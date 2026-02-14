@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import FloatingDock from "./components/FloatingDock";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -23,6 +24,7 @@ export default function App() {
 
   return (
     <div className={`flex flex-col min-h-screen transition-colors duration-300 ${darkMode ? 'dark bg-gray-950 text-white' : 'bg-white text-gray-900'}`}>
+      <Navbar darkMode={darkMode} />
       <main className="flex-grow pb-24"> {/* Added padding bottom for floating dock */}
         <Routes>
           <Route path="/" element={<Home darkMode={darkMode} />} />
