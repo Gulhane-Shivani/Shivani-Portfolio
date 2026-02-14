@@ -7,7 +7,6 @@ export default function Home({ darkMode }) {
   const titles = [
     "Web Developer",
     "Frontend Designer",
-    "UI/UX Enthusiast",
     "React Developer",
     "Creative Coder",
   ];
