@@ -4,11 +4,11 @@ export default function SkillCard({ category, items, darkMode }) {
       <h3 className={`text-lg font-bold mb-3 ${darkMode ? 'text-purple-400' : 'text-purple-700'}`}>
         {category}
       </h3>
-      <ul className={`space-y-1 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+      <ul className={`${category === "Languages" || category === "Backend" ? "space-y-1" : "grid grid-cols-2 gap-x-4 gap-y-2"} ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
         {items.map((item, index) => (
-          <li key={index} className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
-            {item}
+          <li key={index} className="flex items-center gap-2 text-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+            <span className="truncate">{item}</span>
           </li>
         ))}
       </ul>

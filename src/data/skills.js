@@ -5,7 +5,7 @@ export const skills = [
   },
   {
     category: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "React"],
+    items: ["HTML", "CSS", "JavaScript", "React", "Bootstrap", "Tailwind CSS"],
   },
   {
     category: "Backend",
@@ -13,10 +13,10 @@ export const skills = [
   },
   {
     category: "Databases",
-    items: ["MySQL", "MongoDB", "MS-Access"],
+    items: ["MySQL", "MongoDB", "PostgreSQL", "MS-Access"],
   },
   {
     category: "Tools",
-    items: ["Git", "GitHub"],
+    items: ["Git", "GitHub", "Postman", "Docker"],
   },
 ];
