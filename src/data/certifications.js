@@ -4,7 +4,7 @@ export const certifications = [
         title: "Programming In Java",
         issuer: "Swayam NPTEL",
         score: "77%",
-        date: "2023",
+        date: "2025",
         image: "assets/certificates/Nptel-shivani.jpg", // Placeholder if I can't generate enough
         description: "Successfully completed the course on Programming in Java with an elite score of 77%."
     },
@@ -21,15 +21,23 @@ export const certifications = [
         title: "The Frontend Web Development",
         issuer: "Great Learning",
         date: "2023",
-        image: "",
+        image: "assets/certificates/FrontEnd_web_devlopment.jpg",
         description: "Comprehensive frontend development course covering HTML, CSS, and JavaScript."
     },
     {
         id: 4,
         title: "Face Detection With OpenCv",
         issuer: "Great Learning",
-        date: "2023",
+        date: "2024",
         image: "assets/certificates/face-detection-certificate.jpg",
         description: "Hands-on project and certification in computer vision using OpenCV for face detection."
+    },
+    {
+        id: 5,
+        title: "Git",
+        issuer: "PrepInsta",
+        date: "2025",
+        image: "assets/certificates/certificate_Git.jpg",
+        description: "In-depth training and certification in Git for version control."
     }
 ];
