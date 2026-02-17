@@ -1,44 +1,53 @@
-Portfolio Website — React 
+Portfolio Website — React
 
-This project is my personal portfolio website, built to showcase my background, skills, and projects as a student and aspiring professional in software development. The application demonstrates a full-stack architecture using React for the frontend and Spring Boot for the backend, reflecting my ability to design and develop complete web applications.
+A modern and responsive personal portfolio website built using React. This project showcases my background, technical skills, and projects as a student and aspiring software developer.
 
-🔹 Purpose
+📌 Overview
 
-The portfolio serves as an online representation of my profile — providing visitors with an overview of who I am, what I have accomplished, and how to contact me. It highlights my technical expertise, creative approach, and commitment to continuous learning.
+This portfolio serves as my digital profile, presenting:
 
-🔹 Features
+A brief introduction about me
 
-Clean, responsive, and user-friendly interface
+My technical skills
 
-Sections for About, Skills, Projects, and Contact
+Projects I have developed
 
-Dynamic content fetched from the backend
+Contact information
 
-Contact form integrated with Spring Boot API
+The application is designed with a clean user interface and structured component-based architecture using React.
 
-Optional database (MySQL/PostgreSQL) for storing project data and messages
+✨ Features
 
-🔹 Tech Stack
+Fully responsive design
 
-Frontend: React, TypeScript (optional), Tailwind CSS / Bootstrap, Axios
-Backend: Spring Boot, Spring Web, Spring Data JPA, MySQL
-Tools: Maven, Git, Postman, VS Code / IntelliJ IDEA
-Deployment: Vercel (frontend) & Render / Railway (backend)
+Clean and user-friendly interface
 
-🔹 Learning Goals
+Sections for:
 
-Strengthen understanding of RESTful API integration
+About
 
-Practice building scalable, maintainable web applications
+Skills
 
-Gain experience in deploying full-stack projects
+Projects
 
-Present a professional digital profile for academic and career opportunities
+Contact
 
-🔹 Future Enhancements
+Smooth navigation between sections
 
-Add admin dashboard for managing portfolio content
+Reusable React components
 
-Include blog section or certifications
+Contact form (static or integrated with email service)
 
-Improve SEO and analytics tracking
+🛠️ Tech Stack
+
+React
+
+JavaScript / TypeScript (Optional)
+
+Tailwind CSS / Bootstrap
+
+HTML5
+
+CSS3
+
+Axios (if API integration is used)
