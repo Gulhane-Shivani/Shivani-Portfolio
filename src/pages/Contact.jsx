@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Send, MessageCircle, Github, Linkedin } from "lucide-react";
+import FadeIn from "../components/FadeIn";
 
 export default function Contact({ darkMode }) {
   // Dark mode specific colors for inputs
@@ -19,7 +20,7 @@ export default function Contact({ darkMode }) {
         <div className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 rounded-3xl overflow-hidden shadow-2xl ${darkMode ? 'bg-gray-900 border border-gray-800' : 'bg-white'}`}>
 
           {/* Left Panel: Contact Info */}
-          <div className={`p-8 lg:p-12 flex flex-col justify-between ${darkMode ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
+          <FadeIn direction="right" delay={0.1} className={`p-8 lg:p-12 flex flex-col justify-between h-full ${darkMode ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
             <div>
               <h2 className={`text-3xl font-bold mb-5 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
                 Let's <span className="text-blue-500">Connect</span>
@@ -82,10 +83,10 @@ export default function Contact({ darkMode }) {
                 </a>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Right Panel: Form */}
-          <div className="p-8 lg:p-12">
+          <FadeIn direction="up" delay={0.2} className="p-8 lg:p-12">
             <h2 className={`text-2xl font-bold mb-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Send Message</h2>
 
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
@@ -140,7 +141,7 @@ export default function Contact({ darkMode }) {
                 Send Message
               </button>
             </form>
-          </div>
+          </FadeIn>
 
         </div>
       </div>

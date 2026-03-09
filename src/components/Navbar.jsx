@@ -1,22 +1,40 @@
-import { Link, useLocation } from "react-router-dom";
-import { Github, Menu, X, Linkedin } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Github, Menu, X, Linkedin, Sun, Moon } from "lucide-react";
 import { useState } from "react";
 
-export default function Navbar({ darkMode }) {
+export default function Navbar({ darkMode, toggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Projects", path: "/projects" },
-    { name: "Certifications", path: "/certifications" },
-    { name: "Skills", path: "/skills" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/#home" },
+    { name: "About", path: "/#about" },
+    { name: "Projects", path: "/#projects" },
+    { name: "Certifications", path: "/#certifications" },
+    { name: "Skills", path: "/#skills" },
+    { name: "Contact", path: "/#contact" },
     { name: "Resume", path: "/resume" },
   ];
 
   const isActive = (path) => location.pathname === path;
+
+  const handleScroll = (e, path) => {
+    if (path.startsWith("/#")) {
+      e.preventDefault();
+      const targetId = path.substring(2); // extracts 'home', 'about', etc.
+
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          window.lenis?.scrollTo(`#${targetId}`, { offset: -80 });
+        }, 100);
+      } else {
+        window.lenis?.scrollTo(`#${targetId}`, { offset: -80 });
+      }
+      setIsOpen(false);
+    }
+  };
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 backdrop-blur-md border-b ${darkMode
@@ -26,7 +44,7 @@ export default function Navbar({ darkMode }) {
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         {/* Brand */}
         <Link to="/" className="text-xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent hover:scale-105 transition-transform">
-          Shivani Portfolio
+          Shivani Gulhane
         </Link>
 
         {/* Desktop Nav */}
@@ -39,16 +57,22 @@ export default function Navbar({ darkMode }) {
                     href={link.path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`py-1 transition-colors hover:text-purple-500 ${darkMode ? "text-gray-400" : "text-gray-600"
-                      }`}
+                    className={`py-1 transition-colors hover:text-purple-500 ${darkMode ? "text-gray-400" : "text-gray-600"}`}
+                  >
+                    {link.name}
+                  </a>
+                ) : link.path.startsWith("/#") ? (
+                  <a
+                    href={link.path}
+                    onClick={(e) => handleScroll(e, link.path)}
+                    className={`relative cursor-pointer py-1 transition-colors hover:text-purple-500 ${darkMode ? "text-gray-400" : "text-gray-600"}`}
                   >
                     {link.name}
                   </a>
                 ) : (
                   <Link
                     to={link.path}
-                    className={`relative py-1 transition-colors hover:text-purple-500 ${isActive(link.path) ? "text-purple-500" : (darkMode ? "text-gray-400" : "text-gray-600")
-                      }`}
+                    className={`relative py-1 transition-colors hover:text-purple-500 ${isActive(link.path) ? "text-purple-500" : (darkMode ? "text-gray-400" : "text-gray-600")}`}
                   >
                     {link.name}
                     {isActive(link.path) && (
@@ -62,40 +86,63 @@ export default function Navbar({ darkMode }) {
 
           <div className={`w-px h-6 ${darkMode ? "bg-gray-800" : "bg-gray-200"}`}></div>
 
-          <a
-            href="https://github.com/Gulhane-Shivani"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`p-2 rounded-xl transition-all duration-300 hover:scale-110 ${darkMode
-              ? "bg-gray-900 text-gray-400 hover:text-white border border-gray-800 hover:border-gray-700"
-              : "bg-gray-50 text-gray-600 hover:text-gray-900 border border-gray-200 hover:border-gray-300"
-              }`}
-            title="GitHub Profile"
-          >
-            <Github size={20} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/shivani-gulhane-5b2519288/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`p-2 rounded-xl transition-all duration-300 hover:scale-110 ${darkMode
-              ? "bg-gray-900 text-gray-400 hover:text-white border border-gray-800 hover:border-gray-700"
-              : "bg-gray-50 text-gray-600 hover:text-gray-900 border border-gray-200 hover:border-gray-300"
-              }`}
-            title="LinkedIn Profile"
-          >
-            <Linkedin size={20} />
-          </a>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className={`p-2 rounded-xl transition-all duration-300 hover:scale-110 ${darkMode
+                ? "bg-gray-900 text-yellow-400 hover:text-yellow-300 border border-gray-800 hover:border-gray-700"
+                : "bg-gray-50 text-gray-600 hover:text-purple-600 border border-gray-200 hover:border-gray-300"
+                }`}
+              title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            >
+              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+
+            <a
+              href="https://github.com/Gulhane-Shivani"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`p-2 rounded-xl transition-all duration-300 hover:scale-110 ${darkMode
+                ? "bg-gray-900 text-gray-400 hover:text-white border border-gray-800 hover:border-gray-700"
+                : "bg-gray-50 text-gray-600 hover:text-gray-900 border border-gray-200 hover:border-gray-300"
+                }`}
+              title="GitHub Profile"
+            >
+              <Github size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/shivani-gulhane-5b2519288/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`p-2 rounded-xl transition-all duration-300 hover:scale-110 ${darkMode
+                ? "bg-gray-900 text-gray-400 hover:text-white border border-gray-800 hover:border-gray-700"
+                : "bg-gray-50 text-gray-600 hover:text-gray-900 border border-gray-200 hover:border-gray-300"
+                }`}
+              title="LinkedIn Profile"
+            >
+              <Linkedin size={20} />
+            </a>
+          </div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className={`md:hidden p-2 rounded-lg transition-colors ${darkMode ? "hover:bg-gray-800" : "hover:bg-gray-100"
-            }`}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Nav Right side buttons */}
+        <div className="flex md:hidden items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            className={`p-2 rounded-lg transition-colors ${darkMode ? "hover:bg-gray-800 text-yellow-400" : "hover:bg-gray-100 text-gray-600"
+              }`}
+            title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          >
+            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button
+            className={`p-2 rounded-lg transition-colors ${darkMode ? "hover:bg-gray-800" : "hover:bg-gray-100"
+              }`}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -116,6 +163,14 @@ export default function Navbar({ darkMode }) {
                 >
                   {link.name}
                 </a>
+              ) : link.path.startsWith("/#") ? (
+                <a
+                  href={link.path}
+                  onClick={(e) => handleScroll(e, link.path)}
+                  className={`block py-2 transition-colors cursor-pointer ${darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900"}`}
+                >
+                  {link.name}
+                </a>
               ) : (
                 <Link
                   to={link.path}
@@ -129,26 +184,28 @@ export default function Navbar({ darkMode }) {
             </li>
           ))}
           <li className={`pt-4 border-t ${darkMode ? "border-gray-800" : "border-gray-100"}`}>
-            <a
-              href="https://github.com/Gulhane-Shivani"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center gap-3 py-2 transition-colors ${darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900"
-                }`}
-            >
-              <Github size={20} />
-              <span>GitHub Profile</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/shivani-gulhane-5b2519288/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center gap-3 py-2 transition-colors ${darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900"
-                }`}
-            >
-              <Linkedin size={20} />
-              <span>LinkedIn Profile</span>
-            </a>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://github.com/Gulhane-Shivani"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-3 py-2 transition-colors ${darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900"
+                  }`}
+              >
+                <Github size={20} />
+                <span>GitHub Profile</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/shivani-gulhane-5b2519288/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-3 py-2 transition-colors ${darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900"
+                  }`}
+              >
+                <Linkedin size={20} />
+                <span>LinkedIn Profile</span>
+              </a>
+            </div>
           </li>
         </ul>
       </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Eye, Download } from "lucide-react";
 import "../styles/global.css"; // Make sure this is included
+import FadeIn from "../components/FadeIn";
 
 export default function Home({ darkMode }) {
   const titles = [
@@ -51,7 +52,7 @@ export default function Home({ darkMode }) {
     >
       {/* Profile Image Section */}
       <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
-        <div className="relative group">
+        <FadeIn direction="right" delay={0.2} className="relative group">
           {/* Glowing Background */}
           <div className={`absolute inset-0 blur-[60px] rounded-full opacity-50 w-80 h-80 mx-auto animate-pulse ${darkMode ? 'bg-blue-900' : 'bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400'}`}></div>
 
@@ -64,36 +65,42 @@ export default function Home({ darkMode }) {
               style={{ objectFit: "cover" }}
             />
           </div>
-        </div>
+        </FadeIn>
       </div>
 
       {/* Text Section */}
       <div className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left space-y-6">
 
         {/* Main Heading */}
-        <h2 className={`text-4xl sm:text-5xl font-extrabold transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-          Hi, I'm <span className="text-purple-500">Shivani</span>
-        </h2>
+        <FadeIn direction="up" delay={0.1}>
+          <h2 className={`text-4xl sm:text-5xl font-extrabold transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+            Hi, I'm <span className="text-purple-500">Shivani</span>
+          </h2>
+        </FadeIn>
 
         {/* Typewriter Subtitle */}
-        <p className={`text-xl sm:text-2xl font-medium transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-          A passionate{" "}
-          <span className="text-purple-400 font-bold">
-            {text}
-            <span className={`border-r-2 ${darkMode ? 'border-purple-400' : 'border-purple-700'} ml-1 animate-cursor`}>|</span>
-          </span>
-        </p>
+        <FadeIn direction="up" delay={0.2}>
+          <p className={`text-xl sm:text-2xl font-medium transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            A passionate{" "}
+            <span className="text-purple-400 font-bold">
+              {text}
+              <span className={`border-r-2 ${darkMode ? 'border-purple-400' : 'border-purple-700'} ml-1 animate-cursor`}>|</span>
+            </span>
+          </p>
+        </FadeIn>
 
         {/* Profile Description */}
-        <p className={`max-w-lg leading-relaxed text-lg transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-          I'm a creative student combining design and technology. I craft digital experiences that are functional and visually delightful, constantly exploring modern tools to sharpen my skills.
-        </p>
+        <FadeIn direction="up" delay={0.3}>
+          <p className={`max-w-lg leading-relaxed text-lg transition-colors duration-300 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+            I'm a creative student combining design and technology. I craft digital experiences that are functional and visually delightful, constantly exploring modern tools to sharpen my skills.
+          </p>
+        </FadeIn>
 
         {/* Skills Section */}
-        <div className="flex flex-col items-center md:items-start space-y-2">
+        <FadeIn direction="up" delay={0.4} className="flex flex-col items-center md:items-start space-y-2">
           <h3 className={`text-lg font-semibold transition-colors duration-300 ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}>Tech Stack:</h3>
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-            {["React", "Java", "Python"].map((skill) => (
+            {["React", "Java", "Python"].map((skill, i) => (
               <span
                 key={skill}
                 className={`px-4 py-2 font-semibold rounded-full shadow-md border transition-colors ${darkMode ? 'bg-gray-800 text-purple-400 border-gray-700 hover:bg-gray-700' : 'bg-white text-purple-700 border-purple-100 hover:bg-purple-50'}`}
@@ -102,10 +109,10 @@ export default function Home({ darkMode }) {
               </span>
             ))}
           </div>
-        </div>
+        </FadeIn>
 
         {/* Resume Buttons */}
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
+        <FadeIn direction="up" delay={0.5} className="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
           <Link
             to="/resume"
             className="flex items-center gap-2 px-6 py-3 font-bold rounded-xl bg-purple-600 text-white hover:bg-purple-700 transition-all transform hover:scale-105 shadow-lg shadow-purple-500/20"
@@ -113,7 +120,7 @@ export default function Home({ darkMode }) {
             <Eye size={20} />
             View Resume
           </Link>
-        </div>
+        </FadeIn>
 
       </div>
     </section>
