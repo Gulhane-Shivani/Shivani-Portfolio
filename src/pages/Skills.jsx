@@ -8,7 +8,7 @@ export default function Skills({ darkMode }) {
       <div className="container mx-auto px-6">
         <FadeIn direction="up">
           <h2 className={`text-4xl font-extrabold mb-16 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-            Technical <span className="text-purple-500">Skills</span>
+            Technical <span className="bg-gradient-to-r from-pink-400 to-indigo-400 text-transparent bg-clip-text">Skills</span>
           </h2>
         </FadeIn>
 

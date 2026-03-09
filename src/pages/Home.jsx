@@ -74,7 +74,7 @@ export default function Home({ darkMode }) {
         {/* Main Heading */}
         <FadeIn direction="up" delay={0.1}>
           <h2 className={`text-4xl sm:text-5xl font-extrabold transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-            Hi, I'm <span className="text-purple-500">Shivani</span>
+            Hi, I'm <span className="bg-gradient-to-r from-pink-400 to-indigo-400 text-transparent bg-clip-text">Shivani</span>
           </h2>
         </FadeIn>
 
@@ -82,10 +82,10 @@ export default function Home({ darkMode }) {
         <FadeIn direction="up" delay={0.2}>
           <p className={`text-xl sm:text-2xl font-medium transition-colors duration-300 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
             A passionate{" "}
-            <span className="text-purple-400 font-bold">
+            <span className="bg-gradient-to-r from-pink-400 to-indigo-400 text-transparent bg-clip-text font-bold">
               {text}
-              <span className={`border-r-2 ${darkMode ? 'border-purple-400' : 'border-purple-700'} ml-1 animate-cursor`}>|</span>
             </span>
+            <span className={`border-r-2 ${darkMode ? 'border-pink-400' : 'border-indigo-400'} ml-1 animate-cursor`}>|</span>
           </p>
         </FadeIn>
 
@@ -103,7 +103,7 @@ export default function Home({ darkMode }) {
             {["React", "Java", "Python"].map((skill, i) => (
               <span
                 key={skill}
-                className={`px-4 py-2 font-semibold rounded-full shadow-md border transition-colors ${darkMode ? 'bg-gray-800 text-purple-400 border-gray-700 hover:bg-gray-700' : 'bg-white text-purple-700 border-purple-100 hover:bg-purple-50'}`}
+                className={`px-4 py-2 font-semibold rounded-full shadow-md border transition-colors ${darkMode ? 'bg-gray-800 text-indigo-400 border-gray-700 hover:bg-gray-700' : 'bg-white text-indigo-500 border-indigo-100 hover:bg-indigo-50'}`}
               >
                 {skill}
               </span>
@@ -115,7 +115,7 @@ export default function Home({ darkMode }) {
         <FadeIn direction="up" delay={0.5} className="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
           <Link
             to="/resume"
-            className="flex items-center gap-2 px-6 py-3 font-bold rounded-xl bg-purple-600 text-white hover:bg-purple-700 transition-all transform hover:scale-105 shadow-lg shadow-purple-500/20"
+            className="flex items-center gap-2 px-6 py-3 font-bold rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-400 text-white hover:from-indigo-600 hover:to-indigo-500 transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/20"
           >
             <Eye size={20} />
             View Resume

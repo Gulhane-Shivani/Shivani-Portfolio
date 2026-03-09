@@ -1,7 +1,7 @@
 export default function SkillCard({ category, items, darkMode }) {
   return (
     <div className="flex flex-col h-full bg-transparent">
-      <h3 className={`text-xl font-bold mb-5 ${darkMode ? 'text-white' : 'text-gray-900'} pb-2 border-b-2 inline-block self-start ${darkMode ? 'border-purple-500/30' : 'border-purple-500/20'}`}>
+      <h3 className={`text-xl font-bold mb-5 ${darkMode ? 'text-white' : 'text-gray-900'} pb-2 border-b-2 inline-block self-start ${darkMode ? 'border-indigo-400/30' : 'border-indigo-500/20'}`}>
         {category}
       </h3>
       <ul className="flex flex-wrap gap-4 sm:gap-5 mt-auto">
@@ -15,7 +15,7 @@ export default function SkillCard({ category, items, darkMode }) {
                 loading="lazy"
               />
             </div>
-            <span className={`text-xs sm:text-sm font-semibold tracking-wide ${darkMode ? 'text-gray-400 group-hover:text-purple-400' : 'text-gray-600 group-hover:text-purple-600'} transition-colors duration-300`}>
+            <span className={`text-xs sm:text-sm font-semibold tracking-wide ${darkMode ? 'text-gray-400 group-hover:text-indigo-400' : 'text-gray-600 group-hover:text-indigo-500'} transition-colors duration-300`}>
               {item.name}
             </span>
           </li>

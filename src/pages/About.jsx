@@ -10,14 +10,14 @@ export default function About({ darkMode }) {
         {/* Heading */}
         <FadeIn direction="up">
           <h2 className={`text-4xl font-extrabold text-center mb-14 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-            About <span className="text-purple-500">Me</span>
+            About <span className="bg-gradient-to-r from-pink-400 to-indigo-400 text-transparent bg-clip-text">Me</span>
           </h2>
         </FadeIn>
 
         {/* Education Section */}
         <div className="mb-20">
           <FadeIn direction="up">
-            <h3 className={`text-3xl font-bold mb-8 ${darkMode ? 'text-purple-400' : 'text-purple-700'}`}>
+            <h3 className={`text-3xl font-bold mb-8 ${darkMode ? 'text-indigo-400' : 'text-gray-900'}`}>
               Education
             </h3>
           </FadeIn>
@@ -72,7 +72,7 @@ export default function About({ darkMode }) {
         {/* Experience Section */}
         <div>
           <FadeIn direction="up">
-            <h3 className={`text-3xl font-bold mb-8 ${darkMode ? 'text-purple-400' : 'text-purple-700'}`}>
+            <h3 className={`text-3xl font-bold mb-8 ${darkMode ? 'text-indigo-400' : 'text-gray-900'}`}>
               Experience
             </h3>
           </FadeIn>

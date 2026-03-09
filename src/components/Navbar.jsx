@@ -43,7 +43,7 @@ export default function Navbar({ darkMode, toggleTheme }) {
       }`}>
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         {/* Brand */}
-        <Link to="/" className="text-xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent hover:scale-105 transition-transform">
+        <Link to="/" className="text-xl font-bold bg-gradient-to-r from-pink-400 to-indigo-400 bg-clip-text text-transparent hover:scale-105 transition-transform">
           Shivani Gulhane
         </Link>
 
@@ -57,7 +57,7 @@ export default function Navbar({ darkMode, toggleTheme }) {
                     href={link.path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`py-1 transition-colors hover:text-purple-500 ${darkMode ? "text-gray-400" : "text-gray-600"}`}
+                    className={`py-1 transition-colors hover:text-indigo-500 ${darkMode ? "text-gray-400" : "text-gray-600"}`}
                   >
                     {link.name}
                   </a>
@@ -65,18 +65,18 @@ export default function Navbar({ darkMode, toggleTheme }) {
                   <a
                     href={link.path}
                     onClick={(e) => handleScroll(e, link.path)}
-                    className={`relative cursor-pointer py-1 transition-colors hover:text-purple-500 ${darkMode ? "text-gray-400" : "text-gray-600"}`}
+                    className={`relative cursor-pointer py-1 transition-colors hover:text-indigo-500 ${darkMode ? "text-gray-400" : "text-gray-600"}`}
                   >
                     {link.name}
                   </a>
                 ) : (
                   <Link
                     to={link.path}
-                    className={`relative py-1 transition-colors hover:text-purple-500 ${isActive(link.path) ? "text-purple-500" : (darkMode ? "text-gray-400" : "text-gray-600")}`}
+                    className={`relative py-1 transition-colors hover:text-indigo-500 ${isActive(link.path) ? "text-indigo-500" : (darkMode ? "text-gray-400" : "text-gray-600")}`}
                   >
                     {link.name}
                     {isActive(link.path) && (
-                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-purple-500 rounded-full"></span>
+                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-indigo-500 rounded-full"></span>
                     )}
                   </Link>
                 )}
@@ -91,7 +91,7 @@ export default function Navbar({ darkMode, toggleTheme }) {
               onClick={toggleTheme}
               className={`p-2 rounded-xl transition-all duration-300 hover:scale-110 ${darkMode
                 ? "bg-gray-900 text-yellow-400 hover:text-yellow-300 border border-gray-800 hover:border-gray-700"
-                : "bg-gray-50 text-gray-600 hover:text-purple-600 border border-gray-200 hover:border-gray-300"
+                : "bg-gray-50 text-gray-600 hover:text-indigo-600 border border-gray-200 hover:border-gray-300"
                 }`}
               title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
             >
@@ -174,7 +174,7 @@ export default function Navbar({ darkMode, toggleTheme }) {
               ) : (
                 <Link
                   to={link.path}
-                  className={`block py-2 transition-colors ${isActive(link.path) ? "text-purple-500" : (darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900")
+                  className={`block py-2 transition-colors ${isActive(link.path) ? "text-indigo-500" : (darkMode ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-gray-900")
                     }`}
                   onClick={() => setIsOpen(false)}
                 >

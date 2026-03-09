@@ -18,7 +18,7 @@ export default function Resume({ darkMode }) {
                             <ArrowLeft size={22} />
                         </Link>
                         <div>
-                            <h1 className="text-3xl font-extrabold bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+                            <h1 className="text-3xl font-extrabold bg-gradient-to-r from-pink-400 to-indigo-400 bg-clip-text text-transparent">
                                 My Resume
                             </h1>
                             <p className={`text-xs mt-0.5 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
@@ -31,7 +31,7 @@ export default function Resume({ darkMode }) {
                         <a
                             href={resumeUrl}
                             download="Shivani_Gulhane_Resume.pdf"
-                            className="flex items-center gap-2 px-5 py-2.5 text-sm font-bold rounded-xl bg-purple-600 text-white hover:bg-purple-700 transition-all transform hover:scale-105 shadow-lg shadow-purple-500/20"
+                            className="flex items-center gap-2 px-5 py-2.5 text-sm font-bold rounded-xl bg-indigo-600 text-white hover:bg-indigo-700 transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/20"
                         >
                             <Download size={18} />
                             Download PDF
@@ -48,7 +48,7 @@ export default function Resume({ darkMode }) {
                     >
                         <div className="flex flex-col items-center justify-center h-full p-10 text-center">
                             <p className="text-xl mb-4">Your browser doesn't support PDF embedding.</p>
-                            <a href={resumeUrl} className="text-purple-500 font-bold underline">Click here to view the PDF</a>
+                            <a href={resumeUrl} className="text-indigo-500 font-bold underline">Click here to view the PDF</a>
                         </div>
                     </iframe>
 
@@ -60,7 +60,7 @@ export default function Resume({ darkMode }) {
                 <div className="mt-8 text-center md:hidden">
                     <p className={`${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                         Can't see the PDF?
-                        <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="ml-2 text-purple-500 font-bold underline">
+                        <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="ml-2 text-indigo-500 font-bold underline">
                             Open Directly
                         </a>
                     </p>

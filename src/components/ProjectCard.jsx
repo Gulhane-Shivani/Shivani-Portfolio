@@ -9,7 +9,7 @@ export default function ProjectCard({ title, image, description, link, technolog
         {/* Technologies Tags */}
         <div className="flex flex-wrap gap-2 mb-3">
           {technologies && technologies.map((tech, index) => (
-            <span key={index} className={`px-2 py-1 text-xs font-medium rounded-md ${darkMode ? 'bg-gray-700 text-purple-400' : 'bg-purple-100 text-purple-700'}`}>
+            <span key={index} className={`px-2 py-1 text-xs font-medium rounded-md ${darkMode ? 'bg-gray-700 text-indigo-400' : 'bg-indigo-50 text-indigo-600 border border-indigo-100'}`}>
               {tech}
             </span>
           ))}
@@ -19,7 +19,7 @@ export default function ProjectCard({ title, image, description, link, technolog
           href={link || "#"}
           target="_blank"
           rel="noopener noreferrer"
-          className={`inline-block text-center w-full py-2 font-medium rounded-lg transition-colors ${darkMode ? 'bg-purple-600 text-white hover:bg-purple-700' : 'bg-purple-600 text-white hover:bg-purple-700'}`}
+          className={`inline-block text-center w-full py-2 font-medium rounded-lg transition-colors ${darkMode ? 'bg-indigo-500 text-white hover:bg-indigo-600' : 'bg-indigo-600 text-white hover:bg-indigo-700'}`}
         >
           View Project
         </a>

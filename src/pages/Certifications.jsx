@@ -8,7 +8,7 @@ export default function Certifications({ darkMode }) {
             <div className="container mx-auto px-6 text-center">
                 <FadeIn direction="up">
                     <h2 className={`text-3xl font-bold mb-8 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-                        My <span className="text-purple-500">Certifications</span>
+                        My <span className="bg-gradient-to-r from-pink-400 to-indigo-400 text-transparent bg-clip-text">Certifications</span>
                     </h2>
                 </FadeIn>
 

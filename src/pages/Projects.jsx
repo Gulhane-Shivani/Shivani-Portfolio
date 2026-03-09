@@ -8,7 +8,7 @@ export default function Projects({ darkMode }) {
       <div className="container mx-auto px-6 text-center">
         <FadeIn direction="up">
           <h2 className={`text-3xl font-bold mb-8 ${darkMode ? 'text-white' : 'text-gray-800'}`}>
-            Academic <span className="text-purple-500">Projects</span>
+            Academic <span className="bg-gradient-to-r from-pink-400 to-indigo-400 text-transparent bg-clip-text">Projects</span>
           </h2>
         </FadeIn>
 
