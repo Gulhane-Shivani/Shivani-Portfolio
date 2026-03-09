@@ -1,19 +1,21 @@
 export default function SkillCard({ category, items, darkMode }) {
   return (
-    <div className={`p-6 rounded-xl border transition-all duration-300 ${darkMode ? 'bg-gray-800 border-gray-700 hover:bg-gray-750' : 'bg-gray-50 border-transparent hover:shadow-md'}`}>
-      <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-purple-400' : 'text-purple-700'}`}>
+    <div className="flex flex-col h-full bg-transparent">
+      <h3 className={`text-xl font-bold mb-5 ${darkMode ? 'text-white' : 'text-gray-900'} pb-2 border-b-2 inline-block self-start ${darkMode ? 'border-purple-500/30' : 'border-purple-500/20'}`}>
         {category}
       </h3>
-      <ul className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+      <ul className="flex flex-wrap gap-4 sm:gap-5 mt-auto">
         {items.map((item, index) => (
-          <li key={index} className="flex flex-col items-center gap-2 p-3 rounded-lg transition-all duration-300 hover:scale-105 bg-white/5 dark:bg-black/20 hover:bg-white/10 dark:hover:bg-black/40">
-            <img
-              src={item.icon}
-              alt={item.name}
-              className="w-10 h-10 object-contain drop-shadow-sm"
-              loading="lazy"
-            />
-            <span className={`text-sm font-medium ${darkMode ? 'text-gray-300' : 'text-gray-700'} text-center`}>
+          <li key={index} className="flex flex-col items-center justify-center gap-2 transition-all duration-300 hover:-translate-y-1.5 group">
+            <div className={`w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-xl transition-all duration-300 ${darkMode ? 'bg-gray-800/40 group-hover:bg-gray-800/80' : 'bg-gray-100/50 group-hover:bg-white'} group-hover:shadow-md`}>
+              <img
+                src={item.icon}
+                alt={item.name}
+                className="w-7 h-7 sm:w-8 sm:h-8 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-110"
+                loading="lazy"
+              />
+            </div>
+            <span className={`text-xs sm:text-sm font-semibold tracking-wide ${darkMode ? 'text-gray-400 group-hover:text-purple-400' : 'text-gray-600 group-hover:text-purple-600'} transition-colors duration-300`}>
               {item.name}
             </span>
           </li>
