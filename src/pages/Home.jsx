@@ -48,7 +48,7 @@ export default function Home({ darkMode }) {
   return (
     <section
       id="home"
-      className={`min-h-screen flex flex-col md:flex-row justify-center items-center px-6 transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-gradient-animate'}`}
+      className={`min-h-screen flex flex-col md:flex-row justify-center items-center px-6 transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-[#f4e6f6]'}`}
     >
       {/* Profile Image Section */}
       <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">

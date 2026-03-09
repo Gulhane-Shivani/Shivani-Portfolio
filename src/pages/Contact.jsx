@@ -11,7 +11,7 @@ export default function Contact({ darkMode }) {
   return (
     <section
       id="contact"
-      className={`relative py-14 min-h-screen flex items-center justify-center transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-gray-100'}`}
+      className={`relative py-14 min-h-screen flex items-center justify-center transition-colors duration-300 ${darkMode ? 'bg-gray-950' : 'bg-[#ece9fe]'}`}
     >
       {/* Background Dots */}
       <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none"></div>

@@ -4,7 +4,7 @@ export default function About({ darkMode }) {
   return (
     <section
       id="about"
-      className={`py-24 transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-white' : 'bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 text-gray-800'}`}
+      className={`py-24 transition-colors duration-300 ${darkMode ? 'bg-gray-950 text-white' : 'bg-[#ece9fe] text-gray-800'}`}
     >
       <div className="container mx-auto px-6 max-w-5xl">
         {/* Heading */}
